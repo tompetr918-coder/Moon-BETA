@@ -62,20 +62,28 @@ textarea {
 .site-bg::after {
   content: "";
   position: absolute;
-  inset: 8vh 5vw auto;
-  height: min(52vw, 440px);
-  background-image: var(--emboss-url);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
-  opacity: 0.11;
+  top: clamp(92px, 11vh, 140px);
+  left: 0;
+  width: 100vw;
+  aspect-ratio: 677 / 369;
+  background: linear-gradient(
+    180deg,
+    rgba(230, 213, 184, 0.28) 0%,
+    rgba(197, 160, 89, 0.2) 42%,
+    rgba(197, 160, 89, 0.14) 100%
+  );
+  opacity: 0.9;
+  -webkit-mask-image: var(--emboss-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center top;
+  -webkit-mask-size: 100% auto;
+  mask-image: var(--emboss-url);
+  mask-repeat: no-repeat;
+  mask-position: center top;
+  mask-size: 100% auto;
   filter:
-    grayscale(1)
-    brightness(0.9)
-    contrast(1.05)
-    drop-shadow(0 1px 0 rgba(255, 248, 222, 0.1))
-    drop-shadow(0 -1px 0 rgba(4, 8, 6, 0.6));
-  mix-blend-mode: screen;
+    drop-shadow(0 1px 0 rgba(255, 244, 214, 0.2))
+    drop-shadow(0 0 28px rgba(197, 160, 89, 0.08));
 }
 
 .shell {
@@ -860,9 +868,11 @@ h2 {
   }
 
   .site-bg::after {
-    inset: 11vh 4vw auto;
-    height: min(60vw, 260px);
-    opacity: 0.1;
+    top: clamp(100px, 13vh, 132px);
+    width: 100vw;
+    opacity: 0.78;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
   }
 
   .shell {
