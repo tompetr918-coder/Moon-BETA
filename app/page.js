@@ -16,6 +16,7 @@ export default function HomePage() {
   const [navOpen, setNavOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [submitState, setSubmitState] = useState("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
   const [language, setLanguage] = useState("cs");
 
   const t = translations[language] ?? translations.cs;
@@ -58,18 +59,49 @@ export default function HomePage() {
     window.localStorage.setItem("moon-river-language", language);
   }, [language]);
 
-  const handleContactSubmit = (event) => {
+  const handleContactSubmit = async (event) => {
     event.preventDefault();
-    setSubmitState("sending");
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
-    window.setTimeout(() => {
-      event.currentTarget.reset();
+    // Basic anti-spam honeypot for static-form delivery.
+    if (String(formData.get("_honey") || "").trim()) {
+      return;
+    }
+
+    setSubmitState("sending");
+    setSubmitMessage("");
+
+    formData.set("_subject", "Moon River - nova poptavka z webu");
+    formData.set("_captcha", "false");
+    formData.set("_template", "table");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@villa-moonriver.cz", {
+        method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submit failed with ${response.status}`);
+      }
+
+      form.reset();
       setSubmitState("done");
+      setSubmitMessage(t.formSuccess);
 
       window.setTimeout(() => {
         setSubmitState("idle");
-      }, 2200);
-    }, 1200);
+        setSubmitMessage("");
+      }, 3200);
+    } catch (error) {
+      console.error("Contact form send failed:", error);
+      setSubmitState("error");
+      setSubmitMessage(t.formError);
+    }
   };
 
   const submitLabel =
@@ -105,6 +137,7 @@ export default function HomePage() {
           t={t}
           submitLabel={submitLabel}
           submitState={submitState}
+          submitMessage={submitMessage}
           onSubmit={handleContactSubmit}
         />
       </main>

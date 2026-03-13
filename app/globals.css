@@ -612,6 +612,15 @@ h2 {
   padding: 34px;
 }
 
+.contact-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .field-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -649,6 +658,19 @@ h2 {
 
 .button-full {
   width: 100%;
+}
+
+.form-status {
+  margin: 14px 0 0;
+  font-size: 0.92rem;
+}
+
+.form-status.is-success {
+  color: #d7c27d;
+}
+
+.form-status.is-error {
+  color: #efb4a1;
 }
 
 .site-footer {

@@ -30,15 +30,15 @@ export function PricingSection({ t }) {
         <div className="pricing-grid">
           <article className="pricing-card reveal-block" data-reveal>
             <p className="pricing-label">{t.pricingOwnTitle}</p>
-            <strong>{formatCzk(ownFurniturePrice)} Kc / mesic</strong>
-            <span>{formatEur(ownFurnitureEur)} EUR / month</span>
+            <strong>{formatCzk(ownFurniturePrice)} {t.pricingCzkSuffix}</strong>
+            <span>{formatEur(ownFurnitureEur)} {t.pricingEurSuffix}</span>
             <p>{t.pricingOwnDescription}</p>
           </article>
 
           <article className="pricing-card pricing-card-featured reveal-block" data-reveal>
             <p className="pricing-label">{t.pricingOwnerTitle}</p>
-            <strong>{formatCzk(ownerFurniturePrice)} Kc / mesic</strong>
-            <span>{formatEur(ownerFurnitureEur)} EUR / month</span>
+            <strong>{formatCzk(ownerFurniturePrice)} {t.pricingCzkSuffix}</strong>
+            <span>{formatEur(ownerFurnitureEur)} {t.pricingEurSuffix}</span>
             <p>{t.pricingOwnerDescription}</p>
           </article>
         </div>
