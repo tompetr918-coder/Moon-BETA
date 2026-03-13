@@ -1,39 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-
-function buildReply(message, t) {
-  const value = message.toLowerCase();
-
-  const groups = [
-    {
-      keywords: ["historie", "ema", "emma", "pribeh", "story", "history", "geschichte"],
-      reply: t.chatReplyHistory
-    },
-    {
-      keywords: ["kuchyn", "jidlo", "food", "kitchen", "restaurant", "gastro", "essen"],
-      reply: t.chatReplyKitchen
-    },
-    {
-      keywords: ["pronajem", "cena", "ceny", "rent", "rental", "price", "preis", "huur"],
-      reply: t.chatReplyPricing
-    },
-    {
-      keywords: ["lokalita", "frymburk", "sumava", "location", "place", "water", "voda"],
-      reply: t.chatReplyLocation
-    },
-    {
-      keywords: ["vybaveni", "furniture", "furnishing", "interier", "interior", "equipment"],
-      reply: t.chatReplyFurnishing
-    }
-  ];
-
-  const match = groups.find((group) =>
-    group.keywords.some((keyword) => value.includes(keyword))
-  );
-
-  return match ? match.reply : t.chatReplyFallback;
-}
+import { buildFallbackReply } from "../lib/emaFallback";
 
 export function ChatWidget({ chatOpen, onToggle, onClose, t }) {
+  const configuredApiUrl = process.env.NEXT_PUBLIC_EMA_API_URL || "";
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -70,25 +39,55 @@ export function ChatWidget({ chatOpen, onToggle, onClose, t }) {
       return;
     }
 
-    setMessages((current) => [
-      ...current,
-      {
-        id: `user-${Date.now()}`,
-        role: "user",
-        text: trimmed
-      }
-    ]);
+    const userMessage = {
+      id: `user-${Date.now()}`,
+      role: "user",
+      text: trimmed
+    };
+
+    setMessages((current) => [...current, userMessage]);
 
     setInputValue("");
     setIsTyping(true);
 
-    window.setTimeout(() => {
+    window.setTimeout(async () => {
+      const historyForApi = [...messages, userMessage].map((message) => ({
+        role: message.role,
+        text: message.text
+      }));
+
+      let reply = buildFallbackReply(trimmed, t);
+
+      if (configuredApiUrl) {
+        try {
+          const response = await fetch(configuredApiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              language: document.documentElement.lang || "cs",
+              messages: historyForApi
+            })
+          });
+
+          if (response.ok) {
+            const payload = await response.json();
+            if (payload.reply) {
+              reply = payload.reply;
+            }
+          }
+        } catch (error) {
+          console.error("EMA API fallback:", error);
+        }
+      }
+
       setMessages((current) => [
         ...current,
         {
           id: `ai-${Date.now()}`,
           role: "ai",
-          text: buildReply(trimmed, t)
+          text: reply
         }
       ]);
       setIsTyping(false);
