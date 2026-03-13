@@ -12,6 +12,7 @@ import { SiteHeader } from "../components/SiteHeader";
 import { translations } from "../components/translations";
 
 export default function HomePage() {
+  const basePath = process.env.NODE_ENV === "production" ? "/Moon-BETA" : "";
   const [navOpen, setNavOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [submitState, setSubmitState] = useState("idle");
@@ -80,7 +81,11 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="site-bg" aria-hidden="true" />
+      <div
+        className="site-bg"
+        aria-hidden="true"
+        style={{ "--emboss-url": `url(${basePath}/branding/razba.png)` }}
+      />
 
       <SiteHeader
         navOpen={navOpen}

@@ -1,6 +1,8 @@
 import { galleryItems } from "./data";
 
 export function GallerySection({ t }) {
+  const basePath = process.env.NODE_ENV === "production" ? "/Moon-BETA" : "";
+
   return (
     <section id="galerie" className="section section-muted">
       <div className="shell">
@@ -13,16 +15,22 @@ export function GallerySection({ t }) {
         </div>
 
         <div className="gallery-grid">
-          {galleryItems.map((item) => (
-            <figure
-              key={item.src}
-              className={`gallery-item${item.wide ? " gallery-item-wide" : ""} reveal-block`}
-              data-reveal
-            >
-              <img src={item.src} alt={item.alt} />
-              <figcaption>{t[item.titleKey]}</figcaption>
-            </figure>
-          ))}
+          {galleryItems.map((item) => {
+            const resolvedSrc = item.src.startsWith("/")
+              ? `${basePath}${item.src}`
+              : item.src;
+
+            return (
+              <figure
+                key={item.src}
+                className={`gallery-item${item.wide ? " gallery-item-wide" : ""} reveal-block`}
+                data-reveal
+              >
+                <img src={resolvedSrc} alt={item.alt} />
+                <figcaption>{t[item.titleKey]}</figcaption>
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>

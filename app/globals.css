@@ -64,14 +64,17 @@ textarea {
   position: absolute;
   inset: 8vh 5vw auto;
   height: min(52vw, 440px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 420' fill='none'%3E%3Cg stroke='%23dbc99e' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='362' cy='78' r='31'/%3E%3Cpath d='M175 110c17-8 39-7 58 2m-112 12c13-6 28-5 41 2m181 15c34-12 76-12 110 1m-62-27c14-8 31-8 45 0m-365 86c80-19 158-21 237-9 54 8 104 6 152-5 47-10 93-12 142-5m-481 33c69-8 132-4 191 11m43-3c79-10 160-2 246 21m-519 29c29-31 59-49 92-53 34-3 60 13 87 56m-167 0c-2 28 2 52 15 70m13-117c12 22 17 48 17 76m24-89c12 23 17 48 16 75m19-77c12 18 19 39 24 62m35-62c-10 17-14 37-13 60m14-29c10 17 14 35 13 54m35-26c10-22 28-42 52-60m-242 94c33 18 76 23 127 15m76-84c27-22 58-31 95-27 34 5 61 24 87 64m-181-1c2 28-3 54-14 76m24-102c9 30 10 61 4 90m27-91c8 29 9 59 2 86m28-80c8 23 10 46 7 69m25-60c-7 22-7 44 0 66m31-60c-10 18-13 37-11 58m35-44c10 17 15 36 17 56m-142 31c33 7 71 4 114-9M84 333c82-8 172-7 266 2m-98 34c61-8 122-9 183-4'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: var(--emboss-url);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: contain;
-  opacity: 0.12;
+  opacity: 0.11;
   filter:
-    drop-shadow(0 1px 0 rgba(255, 248, 222, 0.12))
-    drop-shadow(0 -1px 0 rgba(4, 8, 6, 0.55));
+    grayscale(1)
+    brightness(0.9)
+    contrast(1.05)
+    drop-shadow(0 1px 0 rgba(255, 248, 222, 0.1))
+    drop-shadow(0 -1px 0 rgba(4, 8, 6, 0.6));
   mix-blend-mode: screen;
 }
 
