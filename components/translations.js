@@ -78,7 +78,20 @@ export const translations = {
       "Vitejte v Moon River. Jsem EMA, vase spojeni s historii i komfortem tohoto mista. Cim mohu poslouzit?",
     chatPlaceholder: "Zeptejte se Emy...",
     chatSend: "Odeslat",
-    chatClose: "Zavrit chat"
+    chatClose: "Zavrit chat",
+    chatTyping: "EMA premysli...",
+    chatReplyFallback:
+      "Rozumim. Jako EMA se staram o vase pohodli i orientaci v Moon River. Zeptejte se me na historii, ceny, vybaveni nebo lokalitu.",
+    chatReplyHistory:
+      "Historie mista je soucasti jeho atmosfery. EMA navazuje na pribeh klidu, pameti krajiny a osobniho zazemi, ktere cely projekt nese.",
+    chatReplyKitchen:
+      "V galerii uz vidite realnou kuchyn i obytny prostor vily. Pokud chcete, muzu vas nasmerovat i na vybaveni a varianty dovybaveni majitelem.",
+    chatReplyPricing:
+      "Aktualne pocitame s cenou 37 500 Kc mesicne pri vlastnim vybaveni a 50 000 Kc mesicne pri dovybaveni majitelem. Prepocet do EUR se aktualizuje podle denniho kurzu CNB.",
+    chatReplyLocation:
+      "Moon River je v lokalite Lojzova Paseka u Frymburku, v prirodnim prostredi Sumavy s blizkosti vody a soukromim resortniho typu.",
+    chatReplyFurnishing:
+      "Vybaveni lze nastavit flexibilne. Vedle varianty s vlastnim zarizenim je mozne se s majitelem domluvit i na individualnich prvcich dovybaveni."
   },
   de: {
     brandTag: "Villenresort",
@@ -157,7 +170,20 @@ export const translations = {
       "Willkommen in Moon River. Ich bin EMA, Ihre Verbindung zur Geschichte und zum Komfort dieses Ortes. Wie kann ich Ihnen helfen?",
     chatPlaceholder: "Fragen Sie Ema...",
     chatSend: "Senden",
-    chatClose: "Chat schliessen"
+    chatClose: "Chat schliessen",
+    chatTyping: "EMA denkt nach...",
+    chatReplyFallback:
+      "Ich verstehe. Fragen Sie mich gern nach Geschichte, Preisen, Ausstattung oder Lage von Moon River.",
+    chatReplyHistory:
+      "Die Geschichte des Ortes ist Teil seiner Atmosphare. EMA knupft an Ruhe, Landschaftserinnerung und das personliche Gefuhl des Projekts an.",
+    chatReplyKitchen:
+      "In der Galerie sehen Sie bereits die reale Kuche und den Wohnbereich der Villa. Auf Wunsch leite ich Sie auch zu den Ausstattungsoptionen weiter.",
+    chatReplyPricing:
+      "Aktuell rechnen wir mit 37 500 CZK pro Monat bei eigener Ausstattung und 50 000 CZK pro Monat bei Ausstattung durch den Eigentumer. Die EUR-Umrechnung folgt dem taglichen CNB-Kurs.",
+    chatReplyLocation:
+      "Moon River liegt in Lojzova Paseka bei Frymburk, in der Natur des Bohmerwaldes mit Nahe zum Wasser und resortartiger Privatsphare.",
+    chatReplyFurnishing:
+      "Die Ausstattung ist flexibel. Neben der Variante mit eigener Einrichtung konnen einzelne Ausstattungselemente auch individuell mit dem Eigentumer abgestimmt werden."
   },
   nl: {
     brandTag: "Villa Resort",
@@ -236,7 +262,20 @@ export const translations = {
       "Welkom bij Moon River. Ik ben EMA, uw verbinding met de geschiedenis en het comfort van deze plek. Hoe kan ik u helpen?",
     chatPlaceholder: "Vraag het aan Ema...",
     chatSend: "Versturen",
-    chatClose: "Chat sluiten"
+    chatClose: "Chat sluiten",
+    chatTyping: "EMA denkt na...",
+    chatReplyFallback:
+      "Ik begrijp het. Vraag me gerust naar de geschiedenis, prijzen, inrichting of locatie van Moon River.",
+    chatReplyHistory:
+      "De geschiedenis van deze plek hoort bij de sfeer ervan. EMA sluit aan op rust, landschapsherinnering en het persoonlijke karakter van het project.",
+    chatReplyKitchen:
+      "In de galerij zie je al de echte keuken en leefruimte van de villa. Ik kan je ook helpen met de opties voor inrichting.",
+    chatReplyPricing:
+      "We rekenen nu met 37.500 CZK per maand bij eigen inrichting en 50.000 CZK per maand wanneer de eigenaar de inrichting aanvult. De EUR-omrekening volgt de dagelijkse CNB-koers.",
+    chatReplyLocation:
+      "Moon River ligt in Lojzova Paseka bij Frymburk, in de natuur van het Boheemse Woud met water in de buurt en veel privacy.",
+    chatReplyFurnishing:
+      "De inrichting is flexibel. Naast de variant met eigen meubels kunnen losse onderdelen ook individueel met de eigenaar worden afgesproken."
   },
   hr: {
     brandTag: "Vila Resort",
@@ -315,7 +354,20 @@ export const translations = {
       "Dobrodosli u Moon River. Ja sam EMA, vasa veza s povijescu i udobnoscu ovog mjesta. Kako vam mogu pomoci?",
     chatPlaceholder: "Pitaj Emu...",
     chatSend: "Posalji",
-    chatClose: "Zatvori chat"
+    chatClose: "Zatvori chat",
+    chatTyping: "EMA razmislja...",
+    chatReplyFallback:
+      "Razumijem. Pitajte me o povijesti, cijenama, opremi ili lokaciji Moon Rivera.",
+    chatReplyHistory:
+      "Povijest mjesta dio je njegove atmosfere. EMA se naslanja na pricu o miru, sjecanju krajolika i osobnom osjecaju projekta.",
+    chatReplyKitchen:
+      "U galeriji su vec stvarne fotografije kuhinje i dnevnog prostora vile. Mogu vas usmjeriti i na opcije opremanja.",
+    chatReplyPricing:
+      "Trenutno racunamo s 37 500 CZK mjesecno uz vlastitu opremu i 50 000 CZK mjesecno kad vlasnik dodatno opremi interijer. EUR preracun slijedi dnevni tecaj CNB-a.",
+    chatReplyLocation:
+      "Moon River nalazi se u Lojzovoj Paseci kod Frymburka, u prirodi Sumave, blizu vode i s privatnoscu resortnog tipa.",
+    chatReplyFurnishing:
+      "Oprema je fleksibilna. Osim varijante s vlastitim namjestajem, pojedini elementi mogu se dogovoriti individualno s vlasnikom."
   },
   en: {
     brandTag: "Villa Resort",
@@ -394,6 +446,19 @@ export const translations = {
       "Welcome to Moon River. I am EMA, your connection to the history and comfort of this place. How can I assist you?",
     chatPlaceholder: "Ask Ema...",
     chatSend: "Send",
-    chatClose: "Close chat"
+    chatClose: "Close chat",
+    chatTyping: "EMA is thinking...",
+    chatReplyFallback:
+      "I understand. Ask me about Moon River history, pricing, furnishing, or the location and I will guide you.",
+    chatReplyHistory:
+      "The story of the place is part of its atmosphere. EMA builds on the idea of calm, landscape memory, and the personal tone of the project.",
+    chatReplyKitchen:
+      "The gallery already shows the real kitchen and living area of the villa. I can also help you with the furnishing options.",
+    chatReplyPricing:
+      "Right now the pricing is 37,500 CZK per month with your own furnishing and 50,000 CZK per month with furnishing completed by the owner. The EUR conversion follows the daily CNB rate.",
+    chatReplyLocation:
+      "Moon River is located in Lojzova Paseka near Frymburk, surrounded by Sumava nature, close to the water and designed for private resort-style living.",
+    chatReplyFurnishing:
+      "The furnishing setup is flexible. Besides bringing your own furniture, individual furnishing elements can also be agreed directly with the owner."
   }
 };
