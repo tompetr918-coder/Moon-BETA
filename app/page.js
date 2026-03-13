@@ -75,6 +75,7 @@ export default function HomePage() {
     formData.set("_subject", "Moon River - nova poptavka z webu");
     formData.set("_captcha", "false");
     formData.set("_template", "table");
+    formData.set("_url", window.location.href);
 
     try {
       const response = await fetch("https://formsubmit.co/ajax/info@villa-moonriver.cz", {
@@ -116,7 +117,7 @@ export default function HomePage() {
       <div
         className="site-bg"
         aria-hidden="true"
-        style={{ "--emboss-url": `url(${basePath}/branding/razba.png)` }}
+        style={{ "--emboss-url": `url(${basePath}/branding/razba-wide.png)` }}
       />
 
       <SiteHeader
