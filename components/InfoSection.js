@@ -1,11 +1,15 @@
 export function InfoSection({ t }) {
+  const descriptionBlocks = (t.infoDescription || "").split("\n\n");
+
   return (
     <section id="informace" className="section">
       <div className="shell">
         <div className="section-intro reveal-block" data-reveal>
           <h2>{t.infoTitle}</h2>
           <div className="divider" />
-          <p>{t.infoDescription}</p>
+          {descriptionBlocks.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
 
         <div className="cards">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BenefitsSection } from "../components/BenefitsSection";
 import { ChatWidget } from "../components/ChatWidget";
 import { ContactSection } from "../components/ContactSection";
 import { GallerySection } from "../components/GallerySection";
@@ -97,7 +96,6 @@ export default function HomePage() {
         <InfoSection t={t} />
         <PricingSection t={t} />
         <GallerySection t={t} />
-        <BenefitsSection t={t} />
         <ContactSection
           t={t}
           submitLabel={submitLabel}

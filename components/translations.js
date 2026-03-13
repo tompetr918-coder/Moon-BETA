@@ -15,7 +15,7 @@ export const translations = {
     heroButton: "Poptat pronajem",
     infoTitle: "Investice do klidu",
     infoDescription:
-      "Moon River spojuje osobni pozitek, dlouhodoby klid a jistotu zazemi. Vse je navrzene tak, aby misto pusobilo reprezentativne, ale pritom zustalo intimni a lidske.",
+      "„Vyměňte anonymitu davu za komunitu, která dýchá s vámi.“\n\nSkutečný domov netvoří jen stěny, ale lidé kolem. Moon River jsme navrhli pro ty, kteří už mají dost městského shonu a neosobních vztahů. Malý počet rezidencí zaručuje, že se zde nebudete cítit jako v hotelu, ale jako v uzavřeném přístavu, kde se lidé zdraví úsměvem a znají své příběhy.",
     infoCard1Title: "Garantovany pronajem",
     infoCard1Description:
       "Garantovana opce na 5+5 let. Dlouhodoby model, ktery prinasi stabilitu i pohodli.",
